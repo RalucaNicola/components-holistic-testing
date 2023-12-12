@@ -1,13 +1,10 @@
 .container {
-  composes: background from '../../utils/utils.module.css';
   position: absolute;
-  bottom: var(--margin);
-  left: var(--margin);
-  right: var(--margin);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  top: 20px;
+  background-color: var(--calcite-ui-foreground-3);
+  left: 0;
+  right: 0;
   padding: 15px;
-  border: 1px solid rgba(255 255 255 / 20%);
 }
 
 .actionsContainer {
@@ -27,6 +24,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 10px;
 }
 
 .selectedCountry {

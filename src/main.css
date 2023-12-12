@@ -24,6 +24,9 @@ body,
   --calcite-ui-text-1: rgb(230, 230, 230);
   --calcite-ui-text-2: rgb(210, 210, 210);
   --calcite-ui-text-3: rgb(150, 150, 150);
+  --calcite-ui-foreground-1: #151515;
+  --calcite-ui-foreground-3: #151515;
+  --calcite-scrim-background: rgba(0, 0, 0, 0.5);
   --calcite-label-margin-bottom: 0;
 }
 
@@ -34,6 +37,17 @@ a {
 
 a:hover {
   color: var(--calcite-ui-text-1);
+}
+
+.esri-widget {
+  background-color: var(--calcite-ui-foreground-3) !important;
+}
+.esri-time-slider__slider {
+  background-color: var(--calcite-ui-foreground-3) !important;
+}
+
+.esri-widget--button {
+  background-color: var(--calcite-ui-foreground-3) !important;
 }
 
 /* remove outline from map */

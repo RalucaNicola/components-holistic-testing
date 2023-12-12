@@ -1,5 +1,5 @@
 export const mapConfig = {
-  'web-map-id': '99f098808fc048bb89f89695106800aa'
+  'web-map-id': '6142846fee944562aaaf013486c01781'
 };
 
 export const portalUrl = 'https://geoxc.maps.arcgis.com';

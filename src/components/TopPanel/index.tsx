@@ -1,4 +1,4 @@
-import * as styles from './BottomPanel.module.css';
+import * as styles from './TopPanel.module.css';
 import '@esri/calcite-components/dist/components/calcite-action';
 import '@esri/calcite-components/dist/components/calcite-label';
 import '@esri/calcite-components/dist/components/calcite-switch';
@@ -7,17 +7,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { setInfoModalOptions } from '../../store/modalSlice';
+import { Identity } from '../Identity';
 
-const BottomPanel = () => {
-  const [visible, setVisible] = useState(true);
+const TopPanel = () => {
   const dispatch = useAppDispatch();
 
-  const togglePanel = () => {
-    setVisible(!visible);
-  };
-
-  const getHeader = () => {
-    return (
+  return (
+    <div className={styles.container}>
       <div className={styles.actionsContainer}>
         <div className={styles.leftActionsContainer}>Hello ArcGIS Maps SDK for JavaScript</div>
         <div className={styles.rightActionsContainer}>
@@ -28,26 +24,11 @@ const BottomPanel = () => {
             text=''
             onClick={() => dispatch(setInfoModalOptions({ visible: true }))}
           ></CalciteAction>
-          <CalciteAction
-            icon={visible ? 'chevronDown' : 'chevronUp'}
-            scale='s'
-            appearance='transparent'
-            onClick={togglePanel}
-            text=''
-          ></CalciteAction>
+          <Identity></Identity>
         </div>
       </div>
-    );
-  };
-
-  return (
-    <div className={styles.container}>
-      {getHeader()}
-      <motion.div layout='size' animate={{ height: visible ? 'auto' : 0 }} style={{ overflow: 'hidden' }}>
-        Some menu goes here
-      </motion.div>
     </div>
   );
 };
 
-export default BottomPanel;
+export default TopPanel;

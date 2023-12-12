@@ -58,13 +58,7 @@ export const initializeView = (divRef: HTMLDivElement) => async (dispatch: AppDi
         });
 
         await view.when(() => {
-            dispatch(setViewLoaded(true));
-            const mapCenter = getMapCenterFromHashParams();
-            if (mapCenter) {
-                view.goTo({ zoom: mapCenter.zoom, center: [mapCenter.center.lon, mapCenter.center.lat] });
-            }
-            //window.view = view;
-            dispatch(initializeViewEventListeners());
+            dispatch(initializeViewEventListeners(view));
         });
     } catch (error) {
         const { message } = error;

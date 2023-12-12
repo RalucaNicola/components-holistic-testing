@@ -3,14 +3,14 @@ import { setMapCenterToHashParams } from "../../utils/URLHashParams";
 import Graphic from "@arcgis/core/Graphic";
 import { AppDispatch } from "../../store/storeConfiguration";
 import { getView } from "./view";
+import MapView from "@arcgis/core/views/MapView";
 
 interface GraphicHit {
     graphic: Graphic;
 }
 
 const listeners: IHandle[] = [];
-export const initializeViewEventListeners = () => (dispatch: AppDispatch) => {
-    const view = getView();
+export const initializeViewEventListeners = (view: MapView) => (dispatch: AppDispatch) => {
     if (view) {
         const listener = reactiveUtils.when(
             () => view.stationary,
